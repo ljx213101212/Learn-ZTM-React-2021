@@ -4,15 +4,15 @@
 
 ```
 jsx
-key - reconsiliation  
+key - reconciliation  
 webpack - jsx -> js
 ```
 
 
 ### Todo  
 
-[] Use NVM
-[] reconciliation(https://reactjs.org/docs/reconciliation.html#recursing-on-children) 
+- [ ] Use NVM
+- [ ] [reconciliation](https://reactjs.org/docs/reconciliation.html#recursing-on-children) 
 
 ### Question  
 
