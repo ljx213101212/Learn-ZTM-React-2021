@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { CardList } from "./components/cardList.component/CardList";
 
 function App() {
   const [monsters, setMonsters] = useState([]);
@@ -26,7 +27,7 @@ function App() {
     <div className="App">
       <h1>Welcome to monsters rolodex!</h1>
 
-      {monsters.map((monster) => {
+      {/* {monsters.map((monster) => {
         return (
           <div key={monster.id}>
             <div>{monster.name}</div>
@@ -34,7 +35,8 @@ function App() {
             <br></br>
           </div>
         );
-      })}
+      })} */}
+      <CardList monsters={monsters}></CardList>
     </div>
   );
 }
