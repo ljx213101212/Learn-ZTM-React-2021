@@ -1,11 +1,16 @@
 ## Notes for Learning ZTM-React Course  
 
+
+### Projects  
+`https://ljx213101212.github.io/Learn-ZTM-React-2021/monsters-rolodex/`
+
 ### Key words  
 
 ```
 jsx
 key - reconciliation  
 webpack - jsx -> js
+arrow function -> this ->  JS execution context
 ```
 
 ### Key Concepts  
@@ -19,6 +24,11 @@ webpack - jsx -> js
 ### Todo (ToolChain)   
 - [ ] Use NVM
 - [x] Use React Developer Tools (chrome extension)
+- [x] [Use SSH Key (Github)](https://docs.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+
+### Todo (Javascript)
+- [x] [Use bind](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)
+
 ### Todo (React)  
 - [ ] [reconciliation](https://reactjs.org/docs/reconciliation.html#recursing-on-children) 
 - [ ] Familiarize the usage of prop.children 
