@@ -25,6 +25,14 @@ arrow function -> this ->  JS execution context
 - [ ] Use NVM
 - [x] Use React Developer Tools (chrome extension)
 - [x] [Use SSH Key (Github)](https://docs.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- [x] Update package version (npm/yarn)  
+    
+    - For dependency security issues  
+    ```
+    npm audit fix [good]
+    yarn audit (can show but cannot fix, need manually fix now: 7/4/2021)
+    https://javascriptbit.com/yarn-audit-fix-security-issues/
+    ```
 
 ### Todo (Javascript)
 - [x] [Use bind](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)

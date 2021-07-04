@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">React is not rendered!</div>
+    <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+    <script src="https://unpkg.com/react@16.8.6/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.8.6/umd/react-dom.development.js"></script>
+
+    <script type="text/babel">
+
+        const Person = (props) => {
+            return React.createElement(
+                'div',
+                {},
+                React.createElement(
+                    "div",
+                    {},
+                    [
+                        React.createElement("div", {}, props.name),
+                        React.createElement("div", {}, props.occupation),
+                    ]
+                )
+            )
+        }
+
+
+        class AppClass extends React.Component {
+
+            render() {
+                return React.createElement(
+                    'div',
+                    {},
+                    React.createElement(
+                        'h1',
+                        {},
+                        [
+                            React.createElement('span', {},
+                                'React is rendered! By AppClass'),
+                            React.createElement('br'),
+                            React.createElement(Person, { name: "Li", occupation: "Senior Software Engineer" }),
+                            React.createElement(Person, { name: "Li2", occupation: "Senior Web Developer" })
+                        ]
+                    )
+                )
+            }
+        }
+
+        const App = () => React.createElement(
+            'div',
+            {},
+            React.createElement(
+                'h1',
+                {},
+                [
+                    React.createElement('span', {},
+                        'React is rendered!'),
+                    React.createElement('br'),
+                    React.createElement(Person, { name: "Jixiang", occupation: "Software Engineer" }),
+                    React.createElement(Person, { name: "Jixiang2", occupation: "Web Developer" })
+                ]
+            )
+        )
+
+        // after added standalone babel
+        // const App = () => {
+        //    return (
+        //        <div>React is rendered!</div>
+        //    )
+        // };
+        //console.log(App);
+        ReactDOM.render(React.createElement(AppClass), document.getElementById('root'));
+    </script>
+</body>
+
+</html>
