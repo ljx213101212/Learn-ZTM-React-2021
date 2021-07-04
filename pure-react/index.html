@@ -32,10 +32,73 @@
             )
         }
 
+        class LifeCycle extends React.Component {
+
+            constructor(props) {
+                super(props);
+            }
+
+            shouldComponentUpdate(nextProps, nextState) {
+                console.log("shouldComponentUpdate");
+                return true;
+            }
+
+            componentDidMount() {
+                console.log("componentDidMount");
+            }
+
+            componentDidUpdate() {
+                console.log("componentDidUpdate");
+            }
+
+            componentWillUnmount() {
+                console.log("componentWillUnmount");
+            }
+
+            render() {
+                console.log("render");
+                return (
+                    <div>
+                        I am lifecycle.
+                        <div>{this.props.meaningOfLife}</div>
+                    </div>
+                );
+            }
+        }
 
         class AppClass extends React.Component {
 
+            constructor(props) {
+                super(props);
+                this.state = {
+                    meaningOfLife: 47,
+                    isShowLifeCycle: false
+                }
+            }
+
+            handleOnClick = () => {
+                this.setState((prevState, prevProps) => {
+                    return {
+                        meaningOfLife: prevState.meaningOfLife + 1
+                    }
+                }, () => {
+                    //console.log("[setState callback] <- this one should be latter than render", this.state);
+                })
+            }
+
+            toggleLifeCycle = () => {
+                this.setState((prevState, prevProps) => {
+                    return {
+                        ...prevState,
+                        isShowLifeCycle: !prevState.isShowLifeCycle
+                    }
+                }, () => {
+
+                });
+            }
+
             render() {
+                //console.log("[render] <- this one should be earlier than setState callback", this.state);
                 return React.createElement(
                     'div',
                     {},
@@ -47,7 +110,11 @@
                                 'React is rendered! By AppClass'),
                             React.createElement('br'),
                             React.createElement(Person, { name: "Li", occupation: "Senior Software Engineer" }),
-                            React.createElement(Person, { name: "Li2", occupation: "Senior Web Developer" })
+                            React.createElement(Person, { name: "Li2", occupation: "Senior Web Developer" }),
+                            React.createElement('div', {}, `meaning of life:${this.state.meaningOfLife}`),
+                            React.createElement('button', { onClick: this.handleOnClick }, "increase meaning of life"),
+                            React.createElement('button', { onClick: this.toggleLifeCycle }, "toggle the life cycle"),
+                            this.state.isShowLifeCycle ? React.createElement(LifeCycle, { meaningOfLife: this.state.meaningOfLife }) : null
                         ]
                     )
                 )

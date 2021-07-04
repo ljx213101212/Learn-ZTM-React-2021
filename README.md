@@ -33,6 +33,8 @@ arrow function -> this ->  JS execution context
     yarn audit (can show but cannot fix, need manually fix now: 7/4/2021)
     https://javascriptbit.com/yarn-audit-fix-security-issues/
     ```
+- [x] Use Rendering (chrome devtool) - Paint flashing  
+
 
 ### Todo (Javascript)
 - [x] [Use bind](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)
@@ -41,6 +43,7 @@ arrow function -> this ->  JS execution context
 - [ ] [reconciliation](https://reactjs.org/docs/reconciliation.html#recursing-on-children) 
 - [ ] Familiarize the usage of prop.children 
 - [ ] [SyntheticEvent](https://reactjs.org/docs/events.html)
+- [ ] [Virtual DOM]()
 
 ### Todo (CSS)  
 
