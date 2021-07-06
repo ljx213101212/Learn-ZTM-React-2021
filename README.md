@@ -98,9 +98,8 @@ remembr in "Extended E-mail Notification"
 
 ```
 tick use SSL
+click Advanced... and configure your sending gmail username and password.
 ```
-
-123
 
 ### Question
 
