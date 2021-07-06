@@ -94,10 +94,6 @@ incoming: imap.gmail.com SSL 993
 prepare two gmails A (sending) and B (receving)
 Access for less secure apps - Turn on for A which used for sending
 
-test
-test2
-te11
-
 ### Question
 
 1. Why NPM ? or why Yarn?
