@@ -93,7 +93,12 @@ incoming: imap.gmail.com SSL 993
 
 prepare two gmails A (sending) and B (receving)
 Access for less secure apps - Turn on for A which used for sending
-11
+
+remembr in "Extended E-mail Notification"
+
+```
+tick use SSL
+```
 
 ### Question
 
