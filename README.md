@@ -54,7 +54,7 @@ declarative
 - [grid concept](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [grid example](https://gridbyexample.com/what/)
 
-### CI/CD
+### CI/CD (Jenkins)
 
 #### video
 
@@ -83,6 +83,16 @@ https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubunt
 
 https://www.digitalocean.com/community/tutorials/ufw-essentials-common-firewall-rules-and-commands
 ```
+
+#### email notification
+
+https://www.arclab.com/en/kb/email/list-of-smtp-and-imap-servers-mailserver-list.html
+
+outgoing: smtp.gmail.com SSL 465
+incoming: imap.gmail.com SSL 993
+
+prepare two gmails A (sending) and B (receving)
+Access for less secure apps - Turn on for A which used for sending
 
 ### Question
 
