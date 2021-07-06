@@ -58,7 +58,19 @@ declarative
 
 #### video
 
+(bitbucket)
+
+```
 https://www.youtube.com/watch?v=AXlN-f6Uk64&list=PLzvRQMJ9HDiSaisKr7OnM4Fl7JXCDDcmt&index=2
+```
+
+(github)
+
+```
+https://www.youtube.com/watch?v=Z3S2gMBUkBo
+https://plugins.jenkins.io/github/
+https://ci.example.com/jenkins/github-webhook/
+```
 
 #### digital ocean
 
