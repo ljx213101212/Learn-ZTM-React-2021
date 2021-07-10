@@ -35,6 +35,7 @@ declarative
   https://javascriptbit.com/yarn-audit-fix-security-issues/
   ```
 - [x] Use Rendering (chrome devtool) - Paint flashing
+- [ ] Eslint
 
 ### Todo (Javascript)
 
