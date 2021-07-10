@@ -1,0 +1,17 @@
+{
+  "name": "ztm-react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://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@github.com/ljx213101212/Learn-ZTM-React-2021",
+  "author": "ljx213101212 <lijixiang.nus@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "husky": "^7.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.2"
+  },
+  "scripts": {
+    "prepare": "husky install"
+  },
+  "dependencies": {}
+}
