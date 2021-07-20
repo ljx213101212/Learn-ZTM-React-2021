@@ -1,4 +1,4 @@
-import React, { FC, ReactElement, Component } from 'react';
+import React, { FC, ReactElement } from 'react';
 import { withRouter, RouteComponentProps } from 'react-router-dom';
 
 import './menu-item.styles.scss';
