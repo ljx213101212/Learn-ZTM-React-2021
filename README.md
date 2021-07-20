@@ -53,6 +53,7 @@ declarative
 - [ ] Familiarize the usage of prop.children
 - [ ] [SyntheticEvent](https://reactjs.org/docs/events.html)
 - [ ] [Virtual DOM]()
+- [ ] [SVG loader](https://facebook.github.io/create-react-app/docs/adding-images-fonts-and-files)
 
 ### Todo (CSS)
 
