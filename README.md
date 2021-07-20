@@ -40,8 +40,12 @@ declarative
 ### Todo (Javascript)
 
 - [x] [Use bind](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)
-- [ ] [Understand Promise](http://anata.me/2020/05/07/Promise%E7%AE%80%E6%98%93%E5%AE%9E%E7%8E%B0/)  
+- [ ] [Understand Promise](http://anata.me/2020/05/07/Promise%E7%AE%80%E6%98%93%E5%AE%9E%E7%8E%B0/)
 - [ ] [Understand generator](https://www.ruanyifeng.com/blog/2015/05/co.html)
+
+### Todo (Typescript)
+
+- [x] [custom Props](https://stackoverflow.com/questions/51523211/react-routing-using-routecomponentprops-and-custom-props)
 
 ### Todo (React)
 
