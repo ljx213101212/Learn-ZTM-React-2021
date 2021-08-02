@@ -45,6 +45,7 @@ declarative
 
 ### Todo (Typescript)
 
+- [x] [React Typescript CheatSheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events/)
 - [x] [custom Props](https://stackoverflow.com/questions/51523211/react-routing-using-routecomponentprops-and-custom-props)
 
 ### Todo (React)

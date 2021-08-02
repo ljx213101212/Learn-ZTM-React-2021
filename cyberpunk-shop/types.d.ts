@@ -40,3 +40,8 @@ interface ShopData {
 interface ShopPageStates {
   collections: ShopData[];
 }
+
+interface SignInStates {
+  email: string;
+  password: string;
+}
