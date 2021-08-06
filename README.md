@@ -52,6 +52,10 @@ declarative
 
 ### Todo (CSS)
 
+### Todo (Network)
+
+- [x] [TCP/SSL connections](https://medium.com/@osamana/securing-tcp-connections-with-ssl-tls-50dc9b5eb95b)
+
 #### grid
 
 - [grid concept](https://css-tricks.com/snippets/css/complete-guide-grid/)
