@@ -6,7 +6,7 @@ import { sections } from '../../test/directory.data';
 const Home: FC<void> = (): ReactElement => {
   return (
     <div className="homepage">
-      <Directory menus={sections as MenuItemProps[]}></Directory>
+      <Directory />
     </div>
   );
 };

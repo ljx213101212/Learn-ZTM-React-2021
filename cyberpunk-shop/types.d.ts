@@ -7,7 +7,7 @@ interface MenuItemProps {
 }
 
 interface DirectoryProps {
-  menus: MenuItemProps[];
+  sections: MenuItemProps[];
 }
 
 interface CollectionItemsProps {
@@ -38,7 +38,7 @@ interface ShopData {
 }
 
 interface ShopPageStates {
-  collections: ShopData[];
+  collections: any;
 }
 
 interface SignInStates {
