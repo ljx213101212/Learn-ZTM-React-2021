@@ -2,10 +2,13 @@ import React from 'react';
 
 import SHOP_DATA from '../../test/shop.data';
 
-import CollectionPreview from '../../components/collection-preview/collection-preview';
+import CollectionsOverview from '../../components/collections-overview/collections-overview';
+import CollectionPage from '../collection/collection';
+import { Route } from 'react-router-dom';
+import { generatePath } from 'react-router';
 
-class ShopPage extends React.Component<void, ShopPageStates> {
-  constructor(props: void) {
+class ShopPage extends React.Component<any, ShopPageStates> {
+  constructor(props: any) {
     super(props);
 
     this.state = {
@@ -15,11 +18,14 @@ class ShopPage extends React.Component<void, ShopPageStates> {
 
   render(): React.ReactElement {
     const { collections } = this.state;
+    const { match } = this.props;
     return (
       <div className="shop-page">
-        {collections.map(({ id, ...otherCollectionProps }) => (
-          <CollectionPreview key={id} {...otherCollectionProps} />
-        ))}
+        <Route exact path={`${match.path}`} component={CollectionsOverview} />
+        <Route
+          path={`${match.path}/:collectionId`}
+          component={CollectionPage}
+        />
       </div>
     );
   }

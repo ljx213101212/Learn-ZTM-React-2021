@@ -16,8 +16,9 @@ class SignIn extends React.Component<any, SignInStates> {
     };
   }
 
-  handleSubmit = (event: FormEvent): void => {
+  handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
+    console.log('[JX TEST] SignIn', event);
     this.setState({ email: '', password: '' });
   };
 

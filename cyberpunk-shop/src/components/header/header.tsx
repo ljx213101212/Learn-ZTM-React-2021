@@ -6,6 +6,7 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
+import CartIcon from '../cart-icon/cart-icon';
 import CartDropdown from '../cart-dropdown/cart-dropdown';
 
 import './header.styles.scss';
@@ -42,6 +43,7 @@ const Header: FC<any> = ({ currentUser, hidden }) => (
           SIGN IN
         </Link>
       )}
+      <CartIcon />
     </div>
     {hidden ? null : <CartDropdown />}
   </div>

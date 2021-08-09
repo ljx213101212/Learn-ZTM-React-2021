@@ -1,6 +1,9 @@
 import { createSelector } from 'reselect';
 
-const selectShop = (state: RootReducerType): ShopReducerType => state.shop;
+const selectShop = (state: RootReducerType): ShopReducerType => {
+  console.log('[JX TEST] - selectShop', state);
+  return state.shop;
+};
 
 export const selectCollections = createSelector(
   [selectShop],
@@ -12,8 +15,14 @@ export const selectCollectionsForPreview = createSelector(
   (collections) => Object.keys(collections).map((key) => collections[key])
 );
 
-export const selectCollection = (collectionUrlParam: any) =>
-  createSelector(
+export const selectCollection = (collectionUrlParam: any) => {
+  console.log(
+    '[JX TEST] - selectCollection',
+    collectionUrlParam,
+    selectCollections
+  );
+  return createSelector(
     [selectCollections],
     (collections) => collections[collectionUrlParam]
   );
+};
