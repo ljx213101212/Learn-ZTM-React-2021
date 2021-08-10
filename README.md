@@ -28,6 +28,7 @@ declarative
 - [x] Use React Developer Tools (chrome extension)
 - [x] [Use SSH Key (Github)](https://docs.github.com/en/enterprise/2.15/user/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - [x] Update package version (npm/yarn)
+- [x] [Dingbats]([Dingbats](https://www.w3schools.com/charsets/ref_utf_dingbats.asp))
   - For dependency security issues
   ```
   npm audit fix [good]
@@ -62,6 +63,12 @@ declarative
 
 - [grid concept](https://css-tricks.com/snippets/css/complete-guide-grid/)
 - [grid example](https://gridbyexample.com/what/)
+
+
+### Todo (Stripe API)  
+
+#### test credit cards  
+https://stripe.com/docs/testing#cards  
 
 ### CI/CD (Jenkins)
 
