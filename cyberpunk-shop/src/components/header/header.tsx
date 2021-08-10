@@ -26,6 +26,7 @@ const Header: FC<any> = ({ currentUser, hidden }) => (
       </Link>
       {currentUser ? (
         <div
+          style={{ cursor: 'pointer' }}
           className="option"
           onClick={(event: SyntheticEvent) => {
             const signOutEvent = new CustomEvent('SIGN_OUT', {
