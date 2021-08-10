@@ -1,4 +1,4 @@
-import React, { FormEvent, ReactElement } from 'react';
+import React, { FormEvent, ReactElement, SyntheticEvent } from 'react';
 
 import FormInput from '../form-input/form-input';
 import CustomButton from '../custom-button/custom-button';
@@ -16,9 +16,18 @@ class SignIn extends React.Component<any, SignInStates> {
     };
   }
 
-  handleSubmit = (event: FormEvent<HTMLFormElement>): void => {
+  handleSubmit = async (event: SyntheticEvent): Promise<void> => {
     event.preventDefault();
-    console.log('[JX TEST] SignIn', event);
+    const { email, password } = this.state;
+    console.log('[JX TEST] SignIn1', event);
+    const signInEvent = new CustomEvent('SIGN_IN_BY_EMAIL', {
+      detail: {
+        timerTick: new Date().getTime(),
+        email,
+        password,
+      },
+    });
+    window.dispatchEvent(signInEvent);
     this.setState({ email: '', password: '' });
   };
 
