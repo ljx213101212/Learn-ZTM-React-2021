@@ -29,7 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint --fix --ext .jsx --ext .js --ext .ts --ext .tsx src/"
+    "lint": "eslint --fix --ext .jsx --ext .js --ext .ts --ext .tsx src/",
+    "deploy": "copyFolder_relative.bat"
   },
   "eslintConfig": {
     "extends": "react-app"
