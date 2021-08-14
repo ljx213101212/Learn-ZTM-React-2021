@@ -1,1 +1,0 @@
-xcopy D:\\Code\\Web\\ztm-react\\cyberpunk-shop D:\\Code\\Web\\ztm-react-heroku-2021 /exclude:D:\\Code\Web\\ztm-react\\cyberpunk-shop\\exclude.txt /y /i /s
