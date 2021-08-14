@@ -59,6 +59,8 @@ declarative
 
 ### CSS
 
+- [ ] [card](https://codepen.io/AllThingsSmitty/pen/pNLVWm)  
+
 #### grid
 
 - [grid concept](https://css-tricks.com/snippets/css/complete-guide-grid/)
@@ -132,6 +134,17 @@ tick use SSL
 click Advanced... and configure your sending gmail username and password.
 ```
 
+
+
+
+
+
+
+#### Heroku  
+
+https://github.com/ljx213101212/ztm-react-heroku-2021  
+
+Note: Don't forget to authorize heroku domain in firebase authentication console. -> `https://ztm-react.herokuapp.com/`
 
 ### Question
 
