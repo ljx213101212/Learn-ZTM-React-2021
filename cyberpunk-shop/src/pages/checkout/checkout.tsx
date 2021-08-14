@@ -1,7 +1,12 @@
 import React, { FC, SyntheticEvent } from 'react';
 import { connect } from 'react-redux';
-import { selectCartTotal } from '../../redux/cart/cart.selectors';
+import {
+  selectCartItems,
+  selectCartTotal,
+} from '../../redux/cart/cart.selectors';
+import { createStructuredSelector } from 'reselect';
 
+import CheckoutItem from '../../components/checkout-item/checkout-item';
 import { loadStripe, StripeCardElement } from '@stripe/stripe-js';
 import {
   CardElement,
@@ -12,7 +17,7 @@ import {
 
 import './checkout.styles.scss';
 
-const CheckoutPage: FC<any> = (props) => {
+const CheckoutPage: FC<any> = ({ cartItems, total }) => {
   const stripe = useStripe();
   const elements = useElements();
 
@@ -45,8 +50,28 @@ const CheckoutPage: FC<any> = (props) => {
   };
 
   return (
-    <div className="collection-page">
-      <div>Checkout Cart</div>
+    <div className="checkout-page">
+      <div className="checkout-header">
+        <div className="header-block">
+          <span>Product</span>
+        </div>
+        <div className="header-block">
+          <span>Description</span>
+        </div>
+        <div className="header-block">
+          <span>Quantity</span>
+        </div>
+        <div className="header-block">
+          <span>Price</span>
+        </div>
+        <div className="header-block">
+          <span>Remove</span>
+        </div>
+      </div>
+      {cartItems.map((cartItem: any) => (
+        <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+      ))}
+      <div className="total">TOTAL: ${total}</div>
       <div className="stripe-area">
         <form onSubmit={handleSubmit}>
           <CardElement />
@@ -59,11 +84,9 @@ const CheckoutPage: FC<any> = (props) => {
   );
 };
 
-const mapStateToProps = (state: any, ownProps: any) => {
-  console.log(state, ownProps);
-  return {
-    total: selectCartTotal,
-  };
-};
+const mapStateToProps = createStructuredSelector<any, any, any>({
+  cartItems: selectCartItems,
+  total: selectCartTotal,
+});
 
 export default connect(mapStateToProps)(CheckoutPage);

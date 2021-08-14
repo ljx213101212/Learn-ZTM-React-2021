@@ -22,7 +22,7 @@ declarative
 3. What changes when component state changes.
 ```
 
-### Todo (ToolChain)
+### ToolChain
 
 - [ ] Use NVM
 - [x] Use React Developer Tools (chrome extension)
@@ -38,18 +38,18 @@ declarative
 - [x] Use Rendering (chrome devtool) - Paint flashing
 - [ ] Eslint
 
-### Todo (Javascript)
+### Javascript
 
 - [x] [Use bind](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/)
 - [ ] [Understand Promise](http://anata.me/2020/05/07/Promise%E7%AE%80%E6%98%93%E5%AE%9E%E7%8E%B0/)
 - [ ] [Understand generator](https://www.ruanyifeng.com/blog/2015/05/co.html)
 
-### Todo (Typescript)
+### Typescript
 
 - [x] [React Typescript CheatSheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events/)
 - [x] [custom Props](https://stackoverflow.com/questions/51523211/react-routing-using-routecomponentprops-and-custom-props)
 
-### Todo (React)
+### React
 
 - [ ] [reconciliation](https://reactjs.org/docs/reconciliation.html#recursing-on-children)
 - [ ] Familiarize the usage of prop.children
@@ -57,7 +57,7 @@ declarative
 - [ ] [Virtual DOM]()
 - [ ] [SVG loader](https://facebook.github.io/create-react-app/docs/adding-images-fonts-and-files)
 
-### Todo (CSS)
+### CSS
 
 #### grid
 
@@ -65,13 +65,28 @@ declarative
 - [grid example](https://gridbyexample.com/what/)
 
 
-### Todo (Stripe API)  
+### Stripe API 
 
 #### test credit cards  
 https://stripe.com/docs/testing#cards  
 
-### CI/CD (Jenkins)
+#### API KEYs for test  
 
+```
+Publishable	
+pk_test_GvF3BSyx8RSXMK5yAFhqEd3H
+
+Secret	
+sk_test_Ou1w6LVt3zmVipDVJsvMeQsc
+```
+
+### Security   
+
+#### Gitguardian  
+https://www.gitguardian.com/   
+
+### CI/CD (Jenkins)
+ 
 #### video
 
 (bitbucket)
@@ -116,6 +131,7 @@ remembr in "Extended E-mail Notification"
 tick use SSL
 click Advanced... and configure your sending gmail username and password.
 ```
+
 
 ### Question
 
