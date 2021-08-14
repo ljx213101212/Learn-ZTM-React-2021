@@ -80,15 +80,6 @@ Secret
 sk_test_Ou1w6LVt3zmVipDVJsvMeQsc
 ```
 
-
-
-
-
-
-
-
-
-
 ### Security   
 
 #### Gitguardian  
