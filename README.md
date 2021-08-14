@@ -60,6 +60,12 @@ declarative
 ### CSS
 
 - [ ] [card](https://codepen.io/AllThingsSmitty/pen/pNLVWm)  
+- [ ] [styled-components](https://github.com/styled-components/styled-components)  
+
+```
+use header and custom-button component to experience.
+Key Mindset:  Don't judge things uniformly, need to thinking about the tradeoff,  in which case its good to use styled-components? which case it is not worth the effort?
+```
 
 #### grid
 
