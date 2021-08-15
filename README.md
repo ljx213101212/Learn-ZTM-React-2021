@@ -12,6 +12,7 @@ key - reconciliation
 webpack - jsx -> js
 arrow function -> this ->  JS execution context
 declarative
+HOC
 ```
 
 ### Key Concepts
@@ -56,6 +57,7 @@ declarative
 - [ ] [SyntheticEvent](https://reactjs.org/docs/events.html)
 - [ ] [Virtual DOM]()
 - [ ] [SVG loader](https://facebook.github.io/create-react-app/docs/adding-images-fonts-and-files)
+- [ ] [High Order Component](https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb)
 
 ### CSS
 
