@@ -5,7 +5,7 @@ import SHOP_DATA from '../../test/shop.data';
 import CollectionsOverview from '../../components/collections-overview/collections-overview';
 import CollectionPage from '../collection/collection';
 import { Route } from 'react-router-dom';
-import { generatePath } from 'react-router';
+import { connect } from 'react-redux';
 
 class ShopPage extends React.Component<any, ShopPageStates> {
   constructor(props: any) {
@@ -31,4 +31,6 @@ class ShopPage extends React.Component<any, ShopPageStates> {
   }
 }
 
-export default ShopPage;
+const mapDispatchToProps = (dispatch: any) => ({});
+
+export default connect(null, mapDispatchToProps)(ShopPage);
