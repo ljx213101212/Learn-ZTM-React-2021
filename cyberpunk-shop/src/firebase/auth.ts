@@ -1,5 +1,9 @@
 import React, { FC, useEffect, useRef, ReactElement } from 'react';
-import { auth, createUserProfileDocument } from '../firebase/firebase.utils';
+import {
+  auth,
+  createUserProfileDocument,
+  addCollectionAndDocuments,
+} from '../firebase/firebase.utils';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../redux/user/user.actions';
 import { DocumentData } from '@firebase/firestore-types';

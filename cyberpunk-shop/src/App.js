@@ -12,6 +12,8 @@ import {
 } from './utils/windowEventListener';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import Auth from './firebase/auth';
+import FireBaseDataInit from './firebase/initFirebase';
+import Init from './firebase/init';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selectors';
@@ -38,6 +40,8 @@ class App extends Component {
     return (
       <div className="App">
         <Auth />
+        <Init />
+        {/* <FireBaseDataInit /> */}
         <Elements stripe={stripePromise}>
           <BrowserRouter>
             <Header />
