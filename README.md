@@ -44,6 +44,8 @@ To resolve 'cr'[prerrer/prettier] issue:
 1. "prettier/prettier": "off",
 2. yarn run lint
 3. "prettier/prettier": "error",
+
+https://developpaper.com/solution-to-delete-%E2%90%8Deslint-prettier-prettier-error/
 ```
 
 ### Javascript
