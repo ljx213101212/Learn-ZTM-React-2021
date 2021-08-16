@@ -2,7 +2,8 @@ import React from 'react';
 
 import SHOP_DATA from '../../test/shop.data';
 
-import WithSpinnerCollectionsOverview from '../../components/collections-overview/collections-overview';
+// import WithSpinnerCollectionsOverview from '../../components/collections-overview/collections-overview';
+import CollectionsOverviewContainer from '../../components/collections-overview/collections-overview.container';
 import WithSpinnerCollectionPage from '../collection/collection';
 import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -25,9 +26,7 @@ class ShopPage extends React.Component<any, ShopPageStates> {
         <Route
           exact
           path={`${match.path}`}
-          render={(props): any => (
-            <WithSpinnerCollectionsOverview isLoading={isLoading} {...props} />
-          )}
+          component={CollectionsOverviewContainer}
         />
         <Route
           path={`${match.path}/:collectionId`}

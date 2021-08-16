@@ -43,7 +43,13 @@
             {
               "endOfLine": "auto"
             }
-          ]
+          ],
+          "arrow-body-style": "off",
+          "object-curly-newline:": "off",
+          "object-property-newline:": "off",
+          "operator-linebreak:":"off",
+          "array-bracket-newline":"warn",
+          "no-useless-concat":"warn"
         }
       }
     ]

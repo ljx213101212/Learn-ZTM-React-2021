@@ -4,7 +4,7 @@ interface ReduxActionType {
 }
 
 interface RootReducerType {
-  pageState: any;
+  pageState: PageStateReducer;
   user: userReducer;
   cart: cartReducer;
   directory: directoryReducer;
