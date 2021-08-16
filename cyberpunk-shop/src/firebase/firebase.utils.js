@@ -41,10 +41,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 };
 
 //set n data to firebase
-export const addCollectionAndDocuments = async (
-  collectionKey,
-  objectsToAdd
-) => {
+export const addCollectionAndDocuments = async (collectionKey, objectsToAdd) => {
   const collectionRef = firestore.collection(collectionKey);
 
   const batch = firestore.batch();

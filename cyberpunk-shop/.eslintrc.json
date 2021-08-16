@@ -52,5 +52,6 @@
           "no-useless-concat":"warn"
         }
       }
-    ]
+    ],
+    "ignorePatterns": ["**/*.js"]
   }
