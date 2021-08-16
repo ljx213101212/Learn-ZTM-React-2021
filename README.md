@@ -38,6 +38,13 @@ HOC
   ```
 - [x] Use Rendering (chrome devtool) - Paint flashing
 - [ ] Eslint
+```
+To resolve 'cr'[prerrer/prettier] issue:
+
+1. "prettier/prettier": "off",
+2. yarn run lint
+3. "prettier/prettier": "error",
+```
 
 ### Javascript
 
