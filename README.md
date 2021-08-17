@@ -13,6 +13,9 @@ webpack - jsx -> js
 arrow function -> this ->  JS execution context
 declarative
 HOC
+pure function
+generator function
+debouncing
 ```
 
 ### Key Concepts
