@@ -16,8 +16,9 @@ import {
   OptionLink,
   OptionsContainer,
 } from './header.styles';
+import { signOutStart } from '../../redux/user/user.actions';
 
-const Header: FC<any> = ({ currentUser, hidden }) => (
+const Header: FC<any> = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <Logo className="logo" />
@@ -31,12 +32,13 @@ const Header: FC<any> = ({ currentUser, hidden }) => (
           style={{ cursor: 'pointer' }}
           className="option"
           onClick={(event: SyntheticEvent) => {
-            const signOutEvent = new CustomEvent('SIGN_OUT', {
-              detail: {
-                timerTick: new Date().getTime(),
-              },
-            });
-            window.dispatchEvent(signOutEvent);
+            // const signOutEvent = new CustomEvent('SIGN_OUT', {
+            //   detail: {
+            //     timerTick: new Date().getTime(),
+            //   },
+            // });
+            // window.dispatchEvent(signOutEvent);
+            signOutStart();
           }}
         >
           SIGN OUT
@@ -55,4 +57,8 @@ const mapStateToProps = createStructuredSelector<any, any, any>({
   hidden: selectCartHidden,
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch: any) => ({
+  signOutStart: () => dispatch(signOutStart()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
