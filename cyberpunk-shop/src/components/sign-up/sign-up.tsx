@@ -6,6 +6,7 @@ import CustomButton from '../custom-button/custom-button';
 import { auth, createUserProfileDocument } from '../../firebase/firebase.utils';
 
 import './sign-up.styles.scss';
+import { emailSignInStart } from '../../redux/user/user.actions';
 
 class SignUp extends React.Component<any, SignUpStates> {
   constructor(props: any) {
@@ -36,13 +37,7 @@ class SignUp extends React.Component<any, SignUpStates> {
       );
 
       await createUserProfileDocument(user, { displayName });
-
-      this.setState({
-        displayName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-      });
+      emailSignInStart({ email, password });
     } catch (error) {
       console.error(error);
     }

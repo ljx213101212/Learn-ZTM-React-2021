@@ -32,6 +32,7 @@ export function* getSnapshotFromUserAuth(userAuth, additionalData) {
 
 export function* signInWithGoogle() {
   try {
+    console.log('[JX TEST] - signInWithGoogle');
     const { user } = yield auth.signInWithPopup(googleProvider);
     yield getSnapshotFromUserAuth(user);
   } catch (error) {
@@ -68,8 +69,9 @@ export function* signOut() {
 }
 
 export function* onGoogleSignInStart() {
-  console.log('[JX TEST] - onGoogleSignInStart');
+  console.log('[JX TEST] - onGoogleSignInStart - before takeLatest');
   yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle);
+  console.log('[JX TEST] - onGoogleSignInStart - after takeLatest');
 }
 
 export function* onEmailSignInStart() {
