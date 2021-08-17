@@ -7,6 +7,8 @@ import {
   signInFailure,
   signOutSuccess,
   signOutFailure,
+  signUpFailure,
+  emailSignInStart,
 } from './user.actions';
 
 import {
@@ -68,6 +70,23 @@ export function* signOut() {
   }
 }
 
+export function* signUp(props) {
+  try {
+    const { email, password, displayName } = { ...props.payload };
+    console.log('[JX TEST] - signUp - before createUserProfileDocument', {
+      email,
+      password,
+    });
+    const { user } = yield auth.createUserWithEmailAndPassword(email, password);
+
+    yield createUserProfileDocument(user, { displayName });
+    emailSignInStart({ email, password });
+  } catch (error) {
+    console.log('[JX TEST] - signUp - error', error);
+    yield put(signUpFailure(error));
+  }
+}
+
 export function* onGoogleSignInStart() {
   console.log('[JX TEST] - onGoogleSignInStart - before takeLatest');
   yield takeLatest(UserActionTypes.GOOGLE_SIGN_IN_START, signInWithGoogle);
@@ -86,11 +105,17 @@ export function* onSignOutStart() {
   yield takeLatest(UserActionTypes.SIGN_OUT_START, signOut);
 }
 
+export function* onSignUpStart() {
+  console.log('[JX TEST] - onSignUpStart');
+  yield takeLatest(UserActionTypes.SIGN_UP_START, signUp);
+}
+
 export function* userSagas() {
   yield all([
     call(onGoogleSignInStart),
     call(onEmailSignInStart),
     call(onCheckUserSession),
     call(onSignOutStart),
+    call(onSignUpStart),
   ]);
 }

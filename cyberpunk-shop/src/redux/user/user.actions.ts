@@ -40,3 +40,21 @@ export const signOutFailure = (error: any) => ({
   type: UserActionTypes.SIGN_OUT_FAILURE,
   payload: error,
 });
+
+export const signUpStart = (emailAndPasswordAndDisplayName: any) => {
+  console.log('[JX TEST] - user.actions.ts - signUpStart');
+  return {
+    type: UserActionTypes.SIGN_UP_START,
+    payload: emailAndPasswordAndDisplayName,
+  };
+};
+
+export const signUpSuccess = (emailAndPassword: any) => ({
+  type: UserActionTypes.SIGN_UP_SUCCESS,
+  payload: emailAndPassword,
+});
+
+export const signUpFailure = (error: any) => ({
+  type: UserActionTypes.SIGN_UP_FAILURE,
+  payload: error,
+});
