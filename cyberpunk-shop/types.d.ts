@@ -55,6 +55,7 @@ interface User {
 interface UserReducerType {
   id: string | null;
   currentUser: DocumentData | null;
+  error: any | null;
 }
 
 interface HeaderProps {
