@@ -132,6 +132,15 @@ Key Mindset:  Don't judge things uniformly, need to thinking about the tradeoff,
 
 #### test credit cards  
 https://stripe.com/docs/testing#cards  
+```
+4242 4242 4242 4242
+```
+
+#### react elements  
+https://stripe.com/docs/js/elements_object/create  
+
+#### sample project  
+https://github.com/stripe-archive/react-elements-card-payment  
 
 #### API KEYs for test  
 
