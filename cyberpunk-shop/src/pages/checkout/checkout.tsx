@@ -7,50 +7,11 @@ import {
 import { createStructuredSelector } from 'reselect';
 
 import CheckoutItem from '../../components/checkout-item/checkout-item';
-import { loadStripe, StripeCardElement } from '@stripe/stripe-js';
-import {
-  CardElement,
-  Elements,
-  useStripe,
-  useElements,
-} from '@stripe/react-stripe-js';
-
-import StripePaymentForm from '../../components/stripe-payment-form/stripe-payment-form';
+import CustomButton from '../../components/custom-button/custom-button';
 
 import './checkout.styles.scss';
 
-const CheckoutPage: FC<any> = ({ cartItems, total }) => {
-  const stripe = useStripe();
-  const elements = useElements();
-
-  const handleSubmit = async (event: SyntheticEvent): Promise<void> => {
-    event.preventDefault();
-
-    if (elements == null) {
-      return;
-    }
-    try {
-      const result = await stripe?.createPaymentMethod({
-        type: 'card',
-        card: elements.getElement(CardElement) as StripeCardElement,
-      });
-      const { error, paymentMethod } = result!;
-      error
-        ? console.log(
-            '%c [JX TEST] - createPaymentMethod Error',
-            'background: #222; color: #FF0000',
-            error
-          )
-        : console.log(
-            '%c [JX TEST] - createPaymentMethod Success! ',
-            'background: #222; color: #bada55',
-            paymentMethod
-          );
-    } catch (error) {
-      console.log('[JX TEST] - createPaymentMethod error', error);
-    }
-  };
-
+const CheckoutPage: FC<any> = ({ cartItems, total, history }) => {
   return (
     <div className="checkout-page">
       <div className="checkout-header">
@@ -74,23 +35,20 @@ const CheckoutPage: FC<any> = ({ cartItems, total }) => {
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
       <div className="total">TOTAL: ${total}</div>
-      <div className="stripe-area">
-        {/* <form onSubmit={handleSubmit}>
-          <CardElement />
-          <button type="submit" disabled={!stripe || !elements}>
-            Pay
-          </button>
-        </form> */}
-        <StripePaymentForm
-          url={process.env.REACT_APP_PAYMENT_BACKEND_URL}
-          createIntentAPI={process.env.REACT_APP_CREATE_PAYMENT_INTENT_API_NAME}
-          getProductDetailAPI={
-            process.env.REACT_APP_GET_PRODUCT_DETAILS_API_NAME
-          }
-          amount={total}
-          currency={'sgd'}
-        />
-      </div>
+      <CustomButton
+        type="button"
+        onClick={() => {
+          history.push({
+            pathname: '/payment',
+            state: {
+              amount: total,
+              currency: 'sgd',
+            },
+          });
+        }}
+      >
+        {'Proceed to Payment'}
+      </CustomButton>
     </div>
   );
 };

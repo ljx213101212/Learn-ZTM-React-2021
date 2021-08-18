@@ -80,3 +80,8 @@ interface CartReducerType {
   hidden: boolean;
   cartItems: CartItem[];
 }
+
+interface PaymentPayload {
+  amount: number;
+  currency: string;
+}
