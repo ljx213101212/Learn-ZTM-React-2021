@@ -45,7 +45,11 @@ const createPaymentIntentAPI = async (
   currency: string
 ) => {
   console.log('[JX TEST] - createPaymentIntentAPI', url, amount, currency);
-  return await apiCall(baseUrl, url, 'post', { amount, currency });
+  const response: any = await apiCall(baseUrl, url, 'post', {
+    amount,
+    currency,
+  });
+  return response?.data;
 };
 
 export default function StripePaymentForm(props: any) {
@@ -80,8 +84,9 @@ export default function StripePaymentForm(props: any) {
           Number(amount),
           currency
         )
-          .then((clientSecret) => {
-            setClientSecret(clientSecret);
+          .then((data) => {
+            console.log('[JX TEST] - createPaymentIntentAPI', data);
+            setClientSecret(data.clientSecret);
           })
           .catch((err) => {
             setError(err.message);
@@ -99,6 +104,7 @@ export default function StripePaymentForm(props: any) {
 
     // Step 3: Use clientSecret from PaymentIntent and the CardElement
     // to confirm payment with stripe.confirmCardPayment()
+    console.log('[JX TEST] - confirmCardPayment - constructor', clientSecret);
     const payload = await stripe?.confirmCardPayment(clientSecret, {
       payment_method: {
         card: cardElement as StripeCardElement,
