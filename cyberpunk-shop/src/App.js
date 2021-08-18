@@ -5,9 +5,12 @@ import Home from './pages/home/home';
 import ShopPage from './pages/shop/shop';
 import SignInAndSignUpPage from './pages/sign-in-and-sign-up/sign-in-and-sign-up';
 import CheckoutPage from './pages/checkout/checkout';
+import PaymentPage from './pages/payment/payment';
 import Header from './components//header/header';
-import { addWindowEventListeners, removeWindowListener } from './utils/windowEventListener';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import {
+  addWindowEventListeners,
+  removeWindowListener,
+} from './utils/windowEventListener';
 import Auth from './firebase/auth';
 import FireBaseDataInit from './firebase/initFirebase';
 import Init from './firebase/init';
@@ -15,9 +18,14 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { loadStripe, StripeCardElement } from '@stripe/stripe-js';
-import { CardElement, Elements, useStripe, useElements } from '@stripe/react-stripe-js';
+import {
+  CardElement,
+  Elements,
+  useStripe,
+  useElements,
+} from '@stripe/react-stripe-js';
 
-const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
 
 class App extends Component {
   componentDidMount() {
@@ -40,8 +48,19 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/shop" component={ShopPage} />
-              <Route exact path="/signin" render={() => (this.props.currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />)} />
+              <Route
+                exact
+                path="/signin"
+                render={() =>
+                  this.props.currentUser ? (
+                    <Redirect to="/" />
+                  ) : (
+                    <SignInAndSignUpPage />
+                  )
+                }
+              />
               <Route exact path="/checkout" component={CheckoutPage} />
+              <Route exact path="/payment" component={PaymentPage} />
             </Switch>
           </BrowserRouter>
         </Elements>

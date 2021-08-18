@@ -142,15 +142,7 @@ https://stripe.com/docs/js/elements_object/create
 #### sample project  
 https://github.com/stripe-archive/react-elements-card-payment  
 
-#### API KEYs for test  
 
-```
-Publishable	
-pk_test_GvF3BSyx8RSXMK5yAFhqEd3H
-
-Secret	
-sk_test_Ou1w6LVt3zmVipDVJsvMeQsc
-```
 
 ### Security   
 
