@@ -15,6 +15,8 @@ import {
   useElements,
 } from '@stripe/react-stripe-js';
 
+import StripePaymentForm from '../../components/stripe-payment-form/stripe-payment-form';
+
 import './checkout.styles.scss';
 
 const CheckoutPage: FC<any> = ({ cartItems, total }) => {
@@ -73,12 +75,21 @@ const CheckoutPage: FC<any> = ({ cartItems, total }) => {
       ))}
       <div className="total">TOTAL: ${total}</div>
       <div className="stripe-area">
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
           <CardElement />
           <button type="submit" disabled={!stripe || !elements}>
             Pay
           </button>
-        </form>
+        </form> */}
+        <StripePaymentForm
+          url={process.env.REACT_APP_PAYMENT_BACKEND_URL}
+          createIntentAPI={process.env.REACT_APP_CREATE_PAYMENT_INTENT_API_NAME}
+          getProductDetailAPI={
+            process.env.REACT_APP_GET_PRODUCT_DETAILS_API_NAME
+          }
+          amount={total}
+          currency={'sgd'}
+        />
       </div>
     </div>
   );
