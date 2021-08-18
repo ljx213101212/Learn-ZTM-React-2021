@@ -68,6 +68,49 @@ To resolve 'cr'[prerrer/prettier] issue:
 - [ ] [Virtual DOM]()
 - [ ] [SVG loader](https://facebook.github.io/create-react-app/docs/adding-images-fonts-and-files)
 - [ ] [High Order Component](https://medium.com/@jrwebdev/react-higher-order-component-patterns-in-typescript-42278f7590fb)
+- [ ] [Use Effect Cheat Sheet]
+```js
+ComponentDidMount
+//Class
+componentDidMount() {
+    console.log('I just mounted!');
+}
+ 
+//Hooks
+useEffect(() => {
+    console.log('I just mounted!');
+}, [])
+
+
+ComponentWillUnmount
+//Class
+componentWillUnmount() {
+    console.log('I am unmounting');
+}
+ 
+//Hooks
+useEffect(() => {
+    return () => console.log('I am unmounting');
+}, [])
+
+
+ComponentWillReceiveProps
+//Class
+componentWillReceiveProps(nextProps) {
+    if (nextProps.count !== this.props.count) {
+        console.log('count changed', nextProps.count);
+    }
+}
+ 
+//Hooks
+useEffect(() => {
+    console.log('count changed', props.count);
+}, [props.count])
+```
+- [ ][useReducer]()
+```
+when state becomes complex, can use useReducer to swap all useState hooks.
+```
 
 ### CSS
 
