@@ -208,6 +208,27 @@ https://github.com/ljx213101212/ztm-react-heroku-2021
 
 Note: Don't forget to authorize heroku domain in firebase authentication console. -> `https://ztm-react.herokuapp.com/`
 
+### CI/CD (SonarQube)
+  
+### Code Review (Gerrit Code Review)  
+
+### Unit Test/Test Automation  
+
+#### Unit Test
+
+#### API Test
+
+#### UI Test
+
+### Automation Test
+
+```
+https://www.selenium.dev/
+http://watir.com/guides/form-example/
+```
+
+#### Tradeoff Manual test vs Automation Test
+
 ### Question
 
 1. Why NPM ? or why Yarn?
