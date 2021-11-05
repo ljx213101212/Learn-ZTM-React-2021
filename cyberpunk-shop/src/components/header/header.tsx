@@ -1,13 +1,11 @@
-import React, { FC, ReactElement, SyntheticEvent } from 'react';
-import { Link, BrowserRouter } from 'react-router-dom';
-
+import React, { FC, SyntheticEvent, useContext } from 'react';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
-import { selectCurrentUser } from '../../redux/user/user.selectors';
 import { createStructuredSelector } from 'reselect';
 import { connect } from 'react-redux';
 import CartIcon from '../cart-icon/cart-icon';
 import CartDropdown from '../cart-dropdown/cart-dropdown';
+import CurrentUserContext from '../../redux/user/current-user.context';
 
 import './header.styles.scss';
 import {
@@ -16,49 +14,40 @@ import {
   OptionLink,
   OptionsContainer,
 } from './header.styles';
-import { signOutStart } from '../../redux/user/user.actions';
+import { auth } from '../../firebase/firebase.utils';
 
-const Header: FC<any> = ({ currentUser, hidden, signOutStart }) => (
-  <HeaderContainer>
-    <LogoContainer to="/">
-      <Logo className="logo" />
-    </LogoContainer>
+const Header: FC<any> = ({ hidden }) => {
+  const currentUser = useContext(CurrentUserContext);
 
-    <OptionsContainer>
-      <OptionLink to="/shop">SHOP</OptionLink>
-      <OptionLink to="/shop">CONTACT</OptionLink>
-      {currentUser ? (
-        <div
-          style={{ cursor: 'pointer' }}
-          className="option"
-          onClick={(event: SyntheticEvent) => {
-            // const signOutEvent = new CustomEvent('SIGN_OUT', {
-            //   detail: {
-            //     timerTick: new Date().getTime(),
-            //   },
-            // });
-            // window.dispatchEvent(signOutEvent);
-            signOutStart();
-          }}
-        >
-          SIGN OUT
-        </div>
-      ) : (
-        <OptionLink to="/signin">SIGN IN</OptionLink>
-      )}
-      <CartIcon />
-    </OptionsContainer>
-    {hidden ? null : <CartDropdown />}
-  </HeaderContainer>
-);
+  return (
+    <HeaderContainer>
+      <LogoContainer to="/">
+        <Logo className="logo" />
+      </LogoContainer>
 
+      <OptionsContainer>
+        <OptionLink to="/shop">SHOP</OptionLink>
+        <OptionLink to="/shop">CONTACT</OptionLink>
+        {currentUser ? (
+          <div
+            style={{ cursor: 'pointer' }}
+            className="option"
+            onClick={(_event: SyntheticEvent) => {
+              auth.signOut();
+            }}
+          >
+            SIGN OUT
+          </div>
+        ) : (
+          <OptionLink to="/signin">SIGN IN</OptionLink>
+        )}
+        <CartIcon />
+      </OptionsContainer>
+      {hidden ? null : <CartDropdown />}
+    </HeaderContainer>
+  );
+};
 const mapStateToProps = createStructuredSelector<any, any, any>({
-  currentUser: selectCurrentUser,
   hidden: selectCartHidden,
 });
-
-const mapDispatchToProps = (dispatch: any) => ({
-  signOutStart: () => dispatch(signOutStart()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default connect(mapStateToProps)(Header);
