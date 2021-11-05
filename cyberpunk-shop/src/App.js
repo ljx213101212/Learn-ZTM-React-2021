@@ -18,14 +18,11 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from './redux/user/user.selectors';
 import { loadStripe, StripeCardElement } from '@stripe/stripe-js';
-import {
-  CardElement,
-  Elements,
-  useStripe,
-  useElements,
-} from '@stripe/react-stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
 
+//[Strip Integration]
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+import CurrentUserContext from './redux/user/current-user.context';
 
 class App extends Component {
   componentDidMount() {
@@ -44,7 +41,9 @@ class App extends Component {
         {/* <FireBaseDataInit /> */}
         <Elements stripe={stripePromise}>
           <BrowserRouter>
-            <Header />
+            <CurrentUserContext.Provider value={this.props.currentUser}>
+              <Header />
+            </CurrentUserContext.Provider>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/shop" component={ShopPage} />

@@ -35,3 +35,19 @@ export const removeItemFromCart = (
       : cartItem
   );
 };
+
+export const filterItemFromCart = (cartItems: CartItem[], item: CartItem) =>
+  cartItems.filter((cartItem) => cartItem.id !== item.id);
+
+export const getCartItemsCount = (cartItems: CartItem[]) =>
+  cartItems.reduce(
+    (accumalatedQuantity, cartItem) => accumalatedQuantity + cartItem.quantity,
+    0
+  );
+
+export const getCartTotal = (cartItems: CartItem[]) =>
+  cartItems.reduce(
+    (accumalatedQuantity, cartItem) =>
+      accumalatedQuantity + cartItem.quantity * cartItem.price,
+    0
+  );
